@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BubbleSorting1 {
@@ -16,6 +17,17 @@ public class BubbleSorting1 {
         for (int i = 0; i < length; i++) {
             System.out.print("Enter the Value of index: "+i+" : ");
             arr[i] = scan.nextInt();
+        }
+
+        System.out.println("Array before bubble sorting: "+ Arrays.toString(arr));
+
+        int swap;
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < (length-i); j++) {
+                if (arr[j] < arr[j+1]) {
+
+                }
+            }
         }
     }
 }
