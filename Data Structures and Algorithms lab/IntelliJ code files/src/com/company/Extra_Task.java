@@ -16,10 +16,9 @@ public class Extra_Task {
             temp = scan.readLine().split(" ");
 
             Ali = Integer.parseInt(temp[0]);
-            System.out.print("\b");
             Bilal = Integer.parseInt(temp[1]);
-            System.out.print("\b");
             Umar = Integer.parseInt(temp[2]);
+
 
             if((Ali+Bilal+Umar) >=2 ){
                 implementedProbems++;
