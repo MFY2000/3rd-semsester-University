@@ -8,70 +8,48 @@ import java.util.*;
 
 public class BubbleSorting3 {
     public static void main(String[] args) throws IOException {
-        int length,size,i;
-        BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
-
-        System.out.println("3) In Word Document");
+        int length,size,i,j;
         String temp[];
-        Scanner s = new Scanner(System.in);
+
+        BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
         temp = scan.readLine().split(" ");
+
         length = Integer.parseInt(temp[0]);
         size = Integer.parseInt(temp[1]);
 
-        int UserInput[][] = new int[length][size];
+        String UserInput[][] = new String[length][size];
 
         for (i = 0; i < length; i++) {
-
-        }
-
-    }
-}
-
-
-
-/* IMPORTANT: Multiple classes and nested static classes are supported */
-
-/*
- * uncomment this if you want to read input.
-//imports for BufferedReader
-
-*/
-
-// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
-class TestClass {
-    public static void main(String args[] ) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N =Integer.parseInt(st.nextToken());
-        int T = Integer.parseInt(st.nextToken());
-        ArrayList<Fan> arr = new ArrayList<>();
-        for(int i=0;i<N;i++){
-            st = new StringTokenizer(br.readLine());
-            Fan fan = new Fan(st.nextToken(), Integer.parseInt(st.nextToken()));
-            arr.add(fan);
-        }
-        Collections.sort(arr, new SortByPointAndName());
-        // for(Fan fan: arr)
-        //     System.out.println(fan.name+" "+fan.point);
-        for(int i=0;i<T;i++)
-            System.out.println(arr.get(i).name);
-    }
-    static class SortByPointAndName implements Comparator<Fan>
-    {
-        public int compare(Fan a, Fan b)
-        {
-            if(a.point==b.point){
-                return a.name.compareTo(b.name);
+            temp = scan.readLine().split(" ");
+            for (j = 0; j < size; j++) {
+                UserInput[i][j] = temp [j];
             }
-            return b.point-a.point;
         }
-    }
-    static class Fan{
-        String name;
-        int point;
-        Fan(String name, int point){
-            this.name = name;
-            this.point = point;
+
+
+        for (i = 0; i < length-1; i++) {
+            for (j = 0; j < (length-i)-1; j++) {
+
+                boolean match = (Integer.parseInt(UserInput[j][size-1])) <  (Integer.parseInt(UserInput[j+1][size-1]));
+                boolean match2 = ((Integer.parseInt(UserInput[j][size-1])) == (Integer.parseInt(UserInput[j+1][size-1]))) && (UserInput[j][0].charAt(0) > UserInput[j+1][0].charAt(0));
+
+                if (match || match2) {
+                    temp = UserInput[j];
+                    UserInput[j] = UserInput[j+1];
+                    UserInput[j+1] = temp;
+                }
+
+//                else if (match2){
+//                    temp = UserInput[j];
+//                    UserInput[j] = UserInput[j+1];
+//                    UserInput[j+1] = temp;
+//                }
+
+            }
+        }
+
+        for (i = 0; i < 2; i++) {
+            System.out.println(UserInput[i][0]);
         }
     }
 }

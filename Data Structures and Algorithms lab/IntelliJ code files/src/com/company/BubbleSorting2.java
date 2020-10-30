@@ -36,3 +36,26 @@ public class BubbleSorting2 {
 
     }
 }
+
+
+class BubbleSortdes {
+    public static void main(String[] args) {
+        int []array={3,5,7,4,2,9,1,8,6};
+        int i,j;
+        int temp=0;
+        for(i=0; i<array.length-1; i++ ){
+            for(j=0; j<(array.length-i)-1; j++){
+                if (array[j] < array[j+1])
+                {
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+
+            }
+        }
+        for (i=0; i<array.length; i++){
+            System.out.print(array[i]+" ");
+        }
+    }
+}
