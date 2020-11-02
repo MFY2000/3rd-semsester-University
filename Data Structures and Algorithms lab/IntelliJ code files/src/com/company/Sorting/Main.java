@@ -74,14 +74,15 @@ class Sorting{
     }
 
     void MergeSorting(int arr[],int left,int right){
+        System.out.print(" left = "+left+" right = "+right);
+
         if(left<right){
             int mid = (left+right)/2;
             MergeSorting(arr,left,mid);
+            System.out.print("\n | ");
             MergeSorting(arr,mid+1,right);
 
-            System.out.println(Arrays.toString(arr)+" left = "+left+" mid = "+mid+" right = "+right);
-
-            Merge(arr,left,mid,right);
+//            Merge(arr,left,mid,right);
         }
 
     }
