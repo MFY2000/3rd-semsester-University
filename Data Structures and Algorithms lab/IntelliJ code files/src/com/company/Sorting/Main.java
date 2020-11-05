@@ -1,21 +1,71 @@
 package com.company.Sorting;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int array[] = {37,27,43,3,9,82,10};
+        int array[] = {5,6,1,1,8,9,3,5};
 
         Sorting ob = new Sorting();
-//        ob.BubbleSort(array);
-//        ob.SelectionSorting(array);
-//        ob.InsertionSorting(array);
-        ob.MergeSorting(array,0,array.length);
+
+        ob.SelectionSorting(array);
+        ob.InsertionSorting(array);
 
     }
 }
 class Sorting{
+
+    void SelectionSorting(int arr[]){
+        int length = arr.length,
+            swap,
+            countloop = 0;
+        System.out.println("----------------------------------------- Selection Sorting ----------------------------------------- ");
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 0; i < (length-1); i++) {
+            int minIndex = i;
+            for (int j = i+1; j < length; j++) {
+                System.out.println("j = "+j+",minIndex = "+minIndex+",minValue = "+arr[minIndex]+",Check("+arr[j]+"<"+arr[minIndex]+") => "+(arr[j] < arr[minIndex]));
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+                countloop++;
+            }
+            swap = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = swap;
+            System.out.println("----------------------------------------- i = "+i+" Complete -----------------------------------------");
+            System.out.println(Arrays.toString(arr));
+
+        }
+
+        System.out.println("Number of time value inner loop works: "+countloop);
+    }
+
+    void InsertionSorting(int arr[]) {
+        int length = arr.length,
+        countloop = 0;
+        System.out.println("----------------------------------------- Selection Sorting ----------------------------------------- ");
+        System.out.println(Arrays.toString(arr));
+
+        for (int i = 1; i < (length); ++i) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                System.out.println("j = "+j+",key = "+key+",Check("+arr[j]+"<"+key+") => "+(j >= 0 && arr[j] > key));
+                arr[j + 1] = arr[j];
+                j = j - 1;
+                countloop++;
+            }
+            arr[j + 1] = key;
+            System.out.println(Arrays.toString(arr));
+            System.out.println("----------------------------------------- i = " + i + " Complete -----------------------------------------");
+
+        }
+        System.out.println("Number of time value inner loop works: "+countloop);
+    }
+
+
     void BubbleSort(int arr[]){
         int length = arr.length;
         int swap;
@@ -30,46 +80,6 @@ class Sorting{
                 }
                 System.out.println(" "+Arrays.toString(arr));
             }
-        }
-    }
-
-    void SelectionSorting(int arr[]){
-        int length = arr.length;
-        int swap;
-        System.out.println(Arrays.toString(arr));
-
-        for (int i = 0; i < (length-1); i++) {
-            int minIndex = i;
-            for (int j = i+1; j < length; j++) {
-                System.out.println("j = "+j+",minIndex = "+minIndex+",minValue = "+arr[minIndex]+",Check("+arr[j]+"<"+arr[minIndex]+") => "+(arr[j] < arr[minIndex]));
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
-                }
-            }
-            swap = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = swap;
-            System.out.println(Arrays.toString(arr));
-            System.out.println("----------------------------------------- i = "+i+" Complete -----------------------------------------");
-        }
-    }
-
-    void InsertionSorting(int arr[]) {
-        int length = arr.length;
-        System.out.println(Arrays.toString(arr));
-
-        for (int i = 1; i < (length); ++i) {
-            int key = arr[i];
-            int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
-                System.out.println("j = "+j+",key = "+key+",Check("+arr[j]+"<"+key+") => "+(j >= 0 && arr[j] > key));
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            arr[j + 1] = key;
-            System.out.println(Arrays.toString(arr));
-            System.out.println("----------------------------------------- i = " + i + " Complete -----------------------------------------");
-
         }
     }
 
@@ -135,6 +145,7 @@ class Sorting{
             k++;
         }
     }
+
 }
 
 
