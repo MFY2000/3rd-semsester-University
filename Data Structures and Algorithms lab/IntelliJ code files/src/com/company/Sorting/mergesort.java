@@ -4,35 +4,30 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class mergesort {
-    static void merge(int[] arr,int low,int mid,int high){
-        int i,j,k;
-        i=low;j=mid+1;k=low;//0,1,0
-        int[] temp = new int[high+1];
-        while(i<=mid&&j<=high){//i =0
-            if(arr[i] < arr[j]){
-                temp[k] = arr[i];
-                i++;
-                k++;
-            }
-            else{
-                temp[k] = arr[j];
-                j++;
-                k++;
-            }
+    static void merge(int A[ ] , int start, int mid, int end) {
+        //stores the starting position of both parts in temporary variables.
+        int p = start, q = mid+1, k=0;
+        int Arr[] = new int[(end-start)+1];
+
+        for(int i = start; i <= end; i++) {
+            if(p > mid)      //checks if first part comes to an end or not .
+                Arr[ k++ ] = A[ q++] ;
+
+            else if ( q > end)   //checks if second part comes to an end or not
+                Arr[ k++ ] = A[ p++ ];
+
+            else if( A[ p ] < A[ q ])     //checks which part has smaller element.
+                Arr[ k++ ] = A[ p++ ];
+
+            else
+                Arr[ k++ ] = A[ q++];
         }
-        //for remaining elemnets
-        while(i<=mid){
-            temp[k] = arr[i];
-            k++;i++;
-        }
-        while(j<=high){
-            temp[k] = arr[j];
-            k++;j++;
-        }
-        for(int loop = low;loop<=high;loop++){
-            arr[loop] = temp[loop];
+        for (p = 0; p< k ; p ++) {
+   /* Now the real array has elements in sorted manner including both parts.*/
+            A[ start++ ] = Arr[ p ] ;
         }
     }
+
     static void sort(int arr[],int low,int high){
         int mid;
         if(low < high){
