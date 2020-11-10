@@ -1,30 +1,36 @@
 package com.company.Sorting;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class mergesort {
     static void merge(int A[ ] , int start, int mid, int end) {
-        //stores the starting position of both parts in temporary variables.
-        int p = start, q = mid+1, k=0;
-        int Arr[] = new int[(end-start)+1];
+        int low = start, middle = mid+1, count=0;
+        int temp[] = new int[(end-start)+1];
 
-        for(int i = start; i <= end; i++) {
-            if(p > mid)      //checks if first part comes to an end or not .
-                Arr[ k++ ] = A[ q++] ;
-
-            else if ( q > end)   //checks if second part comes to an end or not
-                Arr[ k++ ] = A[ p++ ];
-
-            else if( A[ p ] < A[ q ])     //checks which part has smaller element.
-                Arr[ k++ ] = A[ p++ ];
+        while (low<=mid&&middle<=end){
+           if (A[low] > A[middle])
+               temp[count] = A[low++];
 
             else
-                Arr[ k++ ] = A[ q++];
+                temp[count] = A[middle++];
+
+            count++;
         }
-        for (p = 0; p< k ; p ++) {
-   /* Now the real array has elements in sorted manner including both parts.*/
-            A[ start++ ] = Arr[ p ] ;
+
+        while(low<=mid){
+            temp[count] = A[low];
+            count++;
+            low++;
+        }
+
+        while(middle<=end){
+            temp[count] = A[middle];
+            count++;
+            middle++;
+        }
+
+        for (int i = 0; i<count; i++,start++) {
+              A[start] = temp[i];
         }
     }
 
@@ -39,17 +45,15 @@ public class mergesort {
             merge(arr,low,mid,high);
         }
     }
-    static void test(){
-        int[] arr={10,5,4,22,6,7,11,8,2,1,3,9};
+
+    public static void main(String[] args) {
+        int[] arr={4,8,3,1,6,7};
         int low = 0;
         int high = arr.length-1;
-        System.out.println("Non sorted");
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Non sorted: "+Arrays.toString(arr));
+
         sort(arr,low,high);
-        System.out.println("Sorted: ");
-        System.out.println(Arrays.toString(arr));
-    }
-    public static void main(String[] args) {
-        mergesort.test();
+
+        System.out.println("Sorted: "+Arrays.toString(arr));
     }
 }
