@@ -8,7 +8,7 @@ public class mergesort {
         int temp[] = new int[(end-start)+1];
 
         while (low<=mid&&middle<=end){
-           if (A[low] > A[middle])
+           if (A[low] < A[middle])
                temp[count] = A[low++];
 
             else
@@ -17,21 +17,16 @@ public class mergesort {
             count++;
         }
 
-        while(low<=mid){
-            temp[count] = A[low];
-            count++;
-            low++;
-        }
+        while(low<=mid)
+            temp[count++] = A[low++];
 
-        while(middle<=end){
-            temp[count] = A[middle];
-            count++;
-            middle++;
-        }
+        while(middle<=end)
+            temp[count++] = A[middle++];
 
-        for (int i = 0; i<count; i++,start++) {
+
+        for (int i = 0; i<count; i++,start++)
               A[start] = temp[i];
-        }
+
     }
 
     static void sort(int arr[],int low,int high){
