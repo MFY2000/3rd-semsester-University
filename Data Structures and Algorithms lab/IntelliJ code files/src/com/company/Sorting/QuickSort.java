@@ -30,7 +30,7 @@ public class QuickSort {
         int i = (low-1); // index of smaller element
 
         for (int j=low; j<high; j++)
-            if (arr[j] > pivot)
+            if (arr[j] < pivot)
                 i += swap(arr,i,j);
 
         return (i+swap(arr,i,high));
