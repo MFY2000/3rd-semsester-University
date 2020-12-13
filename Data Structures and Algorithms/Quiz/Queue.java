@@ -148,24 +148,27 @@ class Queue2 extends Queue{
     }
 
     public static void main(String[] args) {
-//a
         Queue2 obj = new Queue2(8);
+        // obj.enQueue(3);
+        // obj.enQueue(8);
+        // obj.deQueue();
+        // obj.deQueue();
+        // obj.deQueue();
+        // obj.enQueue(9);
+//b
         obj.enQueue(3);
         obj.enQueue(8);
         obj.deQueue();
         obj.deQueue();
         obj.deQueue();
-        obj.enQueue(9);
-//b
+        obj.deQueue();
+        obj.deQueue();
         obj.enQueue(1);
         obj.enQueue(2);
-        obj.deQueue();
-        obj.deQueue();
-        obj.deQueue();
         obj.enQueue(3);
         obj.enQueue(4);
         obj.enQueue(5);
 
-
+        
     }
 }
