@@ -249,6 +249,20 @@ public class Linkedlist {
         return count;
     }
 
+    //swap the number
+    static void swap(Node n1,Node n2){
+        int temp = n1.Value;
+        n1.Value = n2.Value;
+        n2.Value = temp;
+    }
+    static void swapAdj(Linkedlist list){
+        int count = 0;
+        Node current = list.head;
+        while (current.pointer != null) {
+            swap(current,(current = current.pointer));
+            current = current.pointer;
+        }
+    }
 
 
     //Display methods
