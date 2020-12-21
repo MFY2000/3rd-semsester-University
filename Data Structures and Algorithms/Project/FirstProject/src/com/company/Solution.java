@@ -1,88 +1,52 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-class Solution {
+public class Solution {
     public static void main(String[] args) {
-        
+
+        Solution obj = new Solution();
+
+        obj.removeInvalidParentheses("()(()()");
+        System.out.println(obj.result);
+
+//        obj.removeInvalidParentheses("(a)())()" );
+//        System.out.println(obj.result);
+//
+//        obj.removeInvalidParentheses(")(");
+//        System.out.println(obj.result);
     }
 
-
-    private Set<String> validExpressions = new HashSet<String>();
-    private int minimumRemoved;
-
-    private void reset() {
-        this.validExpressions.clear();
-        this.minimumRemoved = Integer.MAX_VALUE;
+    ArrayList<String> result = new ArrayList<String>();
+    int max=0;
+    int i=0;
+    public void removeInvalidParentheses(String s) {
+        dfs(s, "", 0, 0);
     }
 
-    private void recurse(
-            String s,
-            int index,
-            int leftCount,
-            int rightCount,
-            StringBuilder expression,
-            int removedCount) {
-
-        // If we have reached the end of string.
-        if (index == s.length()) {
-
-            // If the current expression is valid.
-            if (leftCount == rightCount) {
-
-                // If the current count of removed parentheses is <= the current minimum count
-                if (removedCount <= this.minimumRemoved) {
-
-                    // Convert StringBuilder to a String. This is an expensive operation.
-                    // So we only perform this when needed.
-                    String possibleAnswer = expression.toString();
-
-                    // If the current count beats the overall minimum we have till now
-                    if (removedCount < this.minimumRemoved) {
-                        this.validExpressions.clear();
-                        this.minimumRemoved = removedCount;
-                    }
-                    this.validExpressions.add(possibleAnswer);
-                }
+    public void dfs(String left, String right, int countLeft, int maxLeft){
+        System.out.println(left+"," +right+","+ countLeft+","+ maxLeft);
+        if(left.length()==0){
+            if(countLeft==0 && right.length()!=0){
+                max = maxLeft > max? maxLeft: max;
+                if(maxLeft == max && !result.contains(right))
+                    result.add(right);
             }
-        } else {
-
-            char currentCharacter = s.charAt(index);
-            int length = expression.length();
-
-            // If the current character is neither an opening bracket nor a closing one,
-            // simply recurse further by adding it to the expression StringBuilder
-            if (currentCharacter != '(' && currentCharacter != ')') {
-                expression.append(currentCharacter);
-                this.recurse(s, index + 1, leftCount, rightCount, expression, removedCount);
-                expression.deleteCharAt(length);
-            } else {
-
-                // Recursion where we delete the current character and move forward
-                this.recurse(s, index + 1, leftCount, rightCount, expression, removedCount + 1);
-                expression.append(currentCharacter);
-
-                // If it's an opening parenthesis, consider it and recurse
-                if (currentCharacter == '(') {
-                    this.recurse(s, index + 1, leftCount + 1, rightCount, expression, removedCount);
-                } else if (rightCount < leftCount) {
-                    // For a closing parenthesis, only recurse if right < left
-                    this.recurse(s, index + 1, leftCount, rightCount + 1, expression, removedCount);
-                }
-
-                // Undoing the append operation for other recursions.
-                expression.deleteCharAt(length);
-            }
+            return;
         }
-    }
 
-    public List<String> removeInvalidParentheses(String s) {
+        if(left.charAt(0) == '('){
+            dfs(left.substring(1), right+"(", countLeft+1, maxLeft+1);//keep (
+            dfs(left.substring(1), right, countLeft, maxLeft);//drop (
+        }
+        else if(left.charAt(0)==')'){
+            if(countLeft>0)
+                dfs(left.substring(1), right+")", countLeft-1, maxLeft);
 
-        this.reset();
-        this.recurse(s, 0, 0, 0, new StringBuilder(), 0);
-        return new ArrayList(this.validExpressions);
+            dfs(left.substring(1), right, countLeft, maxLeft);
+
+        }else
+            dfs(left.substring(1), right+String.valueOf(left.charAt(0)), countLeft, maxLeft);
     }
 }

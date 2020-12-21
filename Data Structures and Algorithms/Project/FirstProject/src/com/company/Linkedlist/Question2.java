@@ -1,6 +1,10 @@
 package com.company.Linkedlist;
 
+import java.io.IOException;
+import java.util.Scanner;
 import java.util.Stack;
+import java.util.Timer;
+import java.util.TimerTask;
 
 class Converter{
     // PostFix to exp Infix
@@ -237,73 +241,297 @@ class Converter{
 
         return stack.pop();
     }
-
 }
+
 public class Question2 {
-    public static void main(String[] args) {
-        Converter obj = new Converter();
+    public static void main(String[] args) throws IOException, InterruptedException {
+        Converter Menu = new Converter();
+        Scanner scan = new Scanner(System.in);
         String exp;
+        int k1,k2;
+        boolean condition = true;
+        while (condition){
+            System.out.println("|-----------------------------------------|");
+            System.out.println("|-------------  Notation  ----------------|");
+            System.out.println("|-----------------------------------------|");
+            System.out.println("| 1 --> Convert into Infix Postfix Prefix |");
+            System.out.println("| 2 --> Evaluation the Expression.        |");
+            System.out.println("| 3 --> Exit.                             |");
+            System.out.println("|-----------------------------------------|");
+            System.out.print("|Enter: ");
+            k1 = scan.nextInt();
+            switch (k1){
+                case 3:
+                    System.exit(0);
+                case 2:
+                    while (condition) {
+                        System.out.println("|-----------------------------------------|");
+                        System.out.println("|---------  Notation(Evaluation)  --------|");
+                        System.out.println("|-----------------------------------------|");
+                        System.out.println("| 1 --> Sample/defualt Expression.        |");
+                        System.out.println("| 2 --> Type the Expression.              |");
+                        System.out.println("| 3 --> Go Back.                          |");
+                        System.out.println("|-----------------------------------------|");
+                        System.out.print("|Enter: ");
+                        k2 = scan.nextInt();
+                        switch (k2) {
+                            case 3:
+                                condition = false;
+                                break;
+                            case 1:
+                                while (condition) {
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("|-----  Notation(Sample Evaluation)  -----|");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("| 1 --> Sample Prefix Expression.         |");
+                                    System.out.println("| 2 --> Sample Prefix Expression.         |");
+                                    System.out.println("| 3 --> Go Back.                          |");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.print("|Enter: ");
+                                    switch (scan.nextInt()){
+                                        case 3:
+                                            condition = !condition;
+                                            break;
+                                        case 2:
+                                            exp="+9*26";
+                                            System.out.println("postfix evaluation: "+Menu.calculatePre(exp));
+                                            break;
+                                        case 1:
+                                            exp="291*+8/";
+                                            System.out.println("postfix evaluation: "+Menu.calculatePost(exp));
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Input! ");
+                                    }
+                                }
+                                condition = true;
+                                break;
+                            case 2:
+                                while (condition) {
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("|-----  Notation(Type to Evaluation)  ----|");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("| 1 --> Type Prefix Expression.           |");
+                                    System.out.println("| 2 --> Type Prefix Expression.           |");
+                                    System.out.println("| 3 --> Go Back.                          |");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.print("|Enter: ");
+                                    switch (scan.nextInt()){
+                                        case 3:
+                                            condition = !condition;
+                                            break;
+                                        case 2:
+                                            exp = scan.nextLine();
+                                            System.out.println("postfix evaluation: "+Menu.calculatePre(exp));
+                                            break;
+                                        case 1:
+                                            exp = scan.nextLine();
+                                            System.out.println("postfix evaluation: "+Menu.calculatePost(exp));
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Input! ");
+                                    }
+                                }
+                                condition = true;
+                                break;
+                            default:
+                                System.out.println("Invalid Input! ");
+                        }
+                    }
+                    condition = true;
+                    break;
+                case 1:
+                    while (condition){
+                        System.out.println("|-----------------------------------------|");
+                        System.out.println("|----------  Notation(Convert)  ----------|");
+                        System.out.println("|-----------------------------------------|");
+                        System.out.println("| 1 --> Sample/defualt Expression.        |");
+                        System.out.println("| 2 --> Type the Expression.              |");
+                        System.out.println("| 3 --> Go Back.                          |");
+                        System.out.println("|-----------------------------------------|");
+                        System.out.print("|Enter: ");
+                        k2 = scan.nextInt();
+                        switch (k2) {
+                            case 3:
+                                condition = false;
+                                break;
+                            case 1:
+                                while (condition) {
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("|-----  Notation(Sample Convert)  -----|");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("| 1 --> Infix to Prefix Expression.       |");                                    System.out.println("| 1 --> Infix to Prefix Expression.       |");
+                                    System.out.println("| 2 --> Infix to Postfix Expression.      |");
+                                    System.out.println("| 3 --> Prefix to Infix Expression.       |");
+                                    System.out.println("| 4 --> Prefix to Postfix Expression.      |");
+                                    System.out.println("| 5 --> Postfix to Prefix Expression.      |");
+                                    System.out.println("| 6 --> Postfix to Infix Expression.      |");
+                                    System.out.println("| 7 --> Go Back.                          |");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.print("|Enter: ");
+                                    switch (scan.nextInt()){
+                                        case 7:
+                                            condition = !condition;
+                                            break;
+                                        case 6:
+                                            //        part 1B in which the postfix Convert in to infix(parameterized)
+                                            exp = "abcd^e-fgh*+^*+i-";
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        PostFix         ||        Stack(Infix)      |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PostToIn(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 5:
+                                            //        part 2B in which the postfix Convert in to prefix
+                                            exp = "abcd^e-fgh*+^*+i-";
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        PostFix         ||        Stack(Prefix)     |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PostToPre(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 4:
+                                    //        part 2C in which the prefix Convert in to postfix
+                                            exp = "-+a*b^-^cde+f*ghi";
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        PreFix          ||       Stack(Postfix)     |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PreToPost(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 3:
+//                                            part 1C in which the prefix Convert in to Infix
+                                            exp = "-+a*b^-^cde+f*ghi";
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        Prefix          ||        Stack(Infix)      |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PreToIn(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 2:
+//                                            part 2A in which the infix(parameterized) Convert in to Prefix
+                                            exp = "a+b*(c^d-e)^(f+g*h)-i";
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|          Infix         ||       Stack(Prefix)      |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.inToPre(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 1:
+//                                            part 1A in which the infix(parameterized) Convert in to postfix
+                                            exp = "a+b*(c^d-e)^(f+g*h)-i";
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|          Infix         ||       Stack(Postfix)     |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.InToPost(exp);
+                                            System.out.println("|------------------------||---------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Input! ");
+                                    }
+                                }
+                                condition = true;
+                                break;
+                            case 2:
+                                while (condition) {
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("|-----  Notation(Type Convert)  -----|");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.println("| 1 --> Infix to Prefix Expression.       |");                                    System.out.println("| 1 --> Infix to Prefix Expression.       |");
+                                    System.out.println("| 2 --> Infix to Postfix Expression.      |");
+                                    System.out.println("| 3 --> Prefix to Infix Expression.       |");
+                                    System.out.println("| 4 --> Prefix to Postfix Expression.      |");
+                                    System.out.println("| 5 --> Postfix to Prefix Expression.      |");
+                                    System.out.println("| 6 --> Postfix to Infix Expression.      |");
+                                    System.out.println("| 7 --> Go Back.                          |");
+                                    System.out.println("|-----------------------------------------|");
+                                    System.out.print("|Enter: ");
+                                    switch (scan.nextInt()){
+                                        case 7:
+                                            condition = !condition;
+                                            break;
+                                        case 6:
+                                            //        part 1B in which the postfix Convert in to infix(parameterized)
+                                            exp = scan.nextLine();
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        PostFix         ||        Stack(Infix)      |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PostToIn(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 5:
+                                            //        part 2B in which the postfix Convert in to prefix
+                                            exp = scan.nextLine();
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        PostFix         ||        Stack(Prefix)     |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PostToPre(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 4:
+                                            //        part 2C in which the prefix Convert in to postfix
+                                            exp = scan.nextLine();
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        PreFix          ||       Stack(Postfix)     |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PreToPost(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 3:
+//                                            part 1C in which the prefix Convert in to Infix
+                                            exp = scan.nextLine();
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|        Prefix          ||        Stack(Infix)      |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.PreToIn(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 2:
+//                                            part 2A in which the infix(parameterized) Convert in to Prefix
+                                            exp = scan.nextLine();
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|          Infix         ||       Stack(Prefix)      |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.inToPre(exp);
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        case 1:
+//                                            part 1A in which the infix(parameterized) Convert in to postfix
+                                            exp = scan.nextLine();
+                                            System.out.println("|------------------------||--------------------------|");
+                                            System.out.println("|          Infix         ||       Stack(Postfix)     |");
+                                            System.out.println("|------------------------||--------------------------|");
+                                            exp = Menu.InToPost(exp);
+                                            System.out.println("|------------------------||---------------------------|");
+                                            System.out.println("\nFinal output: "+exp);
+                                            break;
+                                        default:
+                                            System.out.println("Invalid Input! ");
+                                    }
+                                }
+                                condition = true;
+                                break;
+                            default:
+                                System.out.println("Invalid Input! ");
+                        }
+                    }
+                    condition = true;
+                    break;
 
-////        part 1A in which the infix(parameterized) Convert in to postfix
-//        exp = "a+b*(c^d-e)^(f+g*h)-i";
-//        System.out.println("|          Infix         ||       Stack(Postfix)      |");
-//        System.out.println("|------------------------||---------------------------|");
-//        exp = obj.InToPost(exp);
-//        System.out.println("|------------------------||---------------------------|");
-//        System.out.println("\nFinal output: "+exp);
-//
-////        part 2A in which the infix(parameterized) Convert in to Prefix
-//        exp = "a+b*(c^d-e)^(f+g*h)-i";
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("|          Infix         ||       Stack(Prefix)      |");
-//        System.out.println("|------------------------||--------------------------|");
-//        exp = obj.inToPre(exp);
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("\nFinal output: "+exp);
-//
-////        part 1B in which the postfix Convert in to infix(parameterized)
-//        exp = "abcd^e-fgh*+^*+i-";
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("|        PostFix         ||        Stack(Infix)      |");
-//        System.out.println("|------------------------||--------------------------|");
-//        exp = obj.PostToIn(exp);
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("\nFinal output: "+exp);
-//
-////        part 2B in which the postfix Convert in to prefix
-//        exp = "abcd^e-fgh*+^*+i-";
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("|        PostFix         ||        Stack(Prefix)     |");
-//        System.out.println("|------------------------||--------------------------|");
-//        exp = obj.PostToPre(exp);
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("\nFinal output: "+exp);
-//
-////        part 1C in which the prefix Convert in to Infix
-//        exp = "-+a*b^-^cde+f*ghi";
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("|        Prefix          ||        Stack(Infix)      |");
-//        System.out.println("|------------------------||--------------------------|");
-//        exp = obj.PreToIn(exp);
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("\nFinal output: "+exp);
-//
-//
-////        part 2C in which the prefix Convert in to postfix
-//        exp = "-+a*b^-^cde+f*ghi";
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("|        PreFix          ||       Stack(Postfix)     |");
-//        System.out.println("|------------------------||--------------------------|");
-//        exp = obj.PreToPost(exp);
-//        System.out.println("|------------------------||--------------------------|");
-//        System.out.println("\nFinal output: "+exp);
+            }
 
-
-//        exp="291*+8/";
-//        System.out.println("postfix evaluation: "+obj.calculatePost(exp));
-
-//        exp="+9*26";
-//        System.out.println("postfix evaluation: "+obj.calculatePre(exp));
-
+        }
     }
 }
