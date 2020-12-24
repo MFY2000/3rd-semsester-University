@@ -3,7 +3,7 @@ package com.company.Linkedlist;
 import java.util.HashSet;
 
 public class Linkedlist {
-    Node head;
+    private static Node head;
 
     static class Node{
         private int Value;
@@ -15,82 +15,77 @@ public class Linkedlist {
         }
     }
 
-    static int getLenght(Linkedlist list) {
+    static int getLenght() {
         int i = 0;
-        Node last = list.head;
+        Node last = head;
         while (last.pointer != null) {
             i++;
             last = last.pointer;
         }
         return i;
     }
-    static boolean isEmpty(Linkedlist list) {
+    static boolean isEmpty() {
         boolean condition = true;
 
-        if (list.head == null)
+        if (head == null)
             condition = false;
 
         return condition;
     }
 
     // add the element in the linked list
-    static Linkedlist insert(Linkedlist list, int data) {
+    static void insert(int data) {
         Node new_node = new Node(data);
         new_node.pointer = null;
 
-        if (!isEmpty(list))
-            list.head = new_node;
+        if (!isEmpty())
+            head = new_node;
         else {
-            Node last = list.head;
+            Node last = head;
             while (last.pointer != null)
                 last = last.pointer;
 
             last.pointer = new_node;
         }
-
-        return list;
     }
-    static Linkedlist insertAtstart(Linkedlist list, int data) {
+    static void insert( int data, int key) {
+        int size = getLenght();
         Node new_node = new Node(data);
-
-        if (!(isEmpty(list)))
-            list.head = new_node;
-       else {
-            new_node.pointer = list.head;
-            list.head = new_node;
-        }
-        return list;
-    }
-    static Linkedlist insertBykey(Linkedlist list, int data, int key) {
-        int size = getLenght(list);
-        Node new_node = new Node(data);
-        Node last = null;
-        Node temp = list.head;
+        Node prev = null;
+        Node current = head;
 
         if(key == 0)
-            list = insertAtstart(list,data);
+            insertAtstart(data);
         else if(key > size-1)
-            list = insert(list,data);
+            insert(data);
         else{
             for(int i = 0; i < key; i++)
-                temp = (last = temp).pointer;
+                current = (prev = current).pointer;
 
-            new_node.pointer = temp;
-            last.pointer = new_node;
+            new_node.pointer = current;
+            prev.pointer = new_node;
         }
+    }
+    static void insertAtstart(int data) {
+        Node new_node = new Node(data);
 
-        return list;
+        if (!(isEmpty()))
+            head = new_node;
+       else {
+            new_node.pointer = head;
+            head = new_node;
+        }
     }
 
     // delete the element in the linked list
-    static Linkedlist deleteByValue(Linkedlist list, int key){
-        Node currNode = list.head,
+    static void deleteByValue(int key){
+        Node currNode = head,
                 prev = null;
 
         if (currNode != null && currNode.Value == key) {
-            list.head = currNode.pointer;
+            head = currNode.pointer;
             System.out.println(key + " found and deleted");
-            return list;
+            return;
         }
 
         while (currNode != null && currNode.Value != key)
@@ -105,22 +100,21 @@ public class Linkedlist {
         if (currNode == null)
             System.out.println(key + " not found");
 
-        return list;
     }
-    static Linkedlist deleteBykey(Linkedlist list, int key){
-        int size = getLenght(list);
-        Node currNode = list.head,
+    static void deleteBykey(int key){
+        int size = getLenght();
+        Node currNode = head,
                 prev = null;
 
         if (size < key) {
             System.out.println(key + " not Exist");
-            return list;
+            return;
         }
 
         if (key == 0){
-            list.head = currNode.pointer;
+            head = currNode.pointer;
             System.out.println((currNode.pointer).Value + " found and deleted");
-            return list;
+            return;
         }
 
         for (int i=0; i<key; i++)
@@ -128,18 +122,18 @@ public class Linkedlist {
 
         prev.pointer = currNode.pointer;
         System.out.println(key + " found and deleted");
-        return list;
+
     }
-    static Linkedlist delete(Linkedlist list){
-        return (deleteBykey(list,getLenght(list)));
+    static void delete(){
+         deleteBykey(getLenght());
     }
-    static Linkedlist deleteFront(Linkedlist list){
-        return (deleteBykey(list,0));
+    static void deleteFront(){
+        deleteBykey(0);
     }
-    static Linkedlist deleteDuplicate(Linkedlist list){
+    static void deleteDuplicate(){
         HashSet<Integer> hs = new HashSet<>();
 
-        Node current = list.head;
+        Node current = head;
         Node prev = null;
         while (current != null) {
             if (hs.contains(current.Value)) prev.pointer = current.pointer;
@@ -149,28 +143,25 @@ public class Linkedlist {
             }
             current = current.pointer;
         }
-        return list;
     }
 
     // update the element in the linked list
-    static Linkedlist update(Linkedlist list, int index, int value){
-        Node currNode = list.head;
-        if (getLenght(list) < index) {
+    static void update( int index, int value){
+        Node currNode = head;
+        if (getLenght() < index) {
             System.out.println("Index not Exist! ");
-            return list;
+            return;
         }
 
         for (int i = 0; i < index; i++)
             currNode = currNode.pointer;
 
         currNode.Value = value;
-
-        return list;
     }
 
     // search the element in the linked list
-    static Boolean Search(Linkedlist list, int key) {
-        Node currNode = list.head;
+    static Boolean Search( int key) {
+        Node currNode = head;
         Boolean condition = false;
 
         if (currNode == null)
@@ -187,12 +178,12 @@ public class Linkedlist {
     }
 
     //Sorting the Element in the
-    static Linkedlist sortList(Linkedlist list) {
-        Node current = list.head, index = null;
+    static void sortList() {
+        Node current = head, index = null;
         int temp;
 
-        if(list.head.pointer == null) {
-            return list;
+        if(current == null) {
+            return;
         }
         else {
             while(current != null) {
@@ -209,28 +200,26 @@ public class Linkedlist {
                 current = current.pointer;
             }
         }
-        return list;
     }
 
     //Merge Two linked list in the element
     static Linkedlist Merge(Linkedlist list1,Linkedlist list2){
         Linkedlist list = new Linkedlist();
-        int l1 = getLenght(list1),l2 = getLenght(list2);
+        int l1 = getLenght(),l2 = getLenght();
         Node current = list1.head;
 
         for (int i = 0; i <= (l1+l2)+1; i++) {
-            list.insert(list,current.Value);
+            list.insert(current.Value);
             if (l1 != i) current = current.pointer;
             else current = list2.head;
         }
-
         return list;
     }
 
     //count the odd and even nodes
-    static int countOdd(Linkedlist list){
+    static int countOdd(){
         int count = 0;
-        Node current = list.head;
+        Node current = head;
         while (current.pointer != null){
             if (current.Value % 2 == 0)
                 count++;
@@ -238,9 +227,9 @@ public class Linkedlist {
         }
         return count;
     }
-    static int countEven(Linkedlist list){
+    static int countEven(){
         int count = 0;
-        Node current = list.head;
+        Node current = head;
         while (current.pointer != null){
             if (current.Value % 2 != 0)
                 count++;
@@ -255,9 +244,9 @@ public class Linkedlist {
         n1.Value = n2.Value;
         n2.Value = temp;
     }
-    static void swapAdj(Linkedlist list){
+    static void swapAdj(){
         int count = 0;
-        Node current = list.head;
+        Node current = head;
         while (current.pointer != null) {
             swap(current,(current = current.pointer));
             current = current.pointer;
@@ -266,8 +255,8 @@ public class Linkedlist {
 
 
     //Display methods
-    static String Display(Linkedlist list){
-        Node currNode = list.head;
+    static String Display(){
+        Node currNode = head;
         String display = "LinkedList: {";
 
         while (currNode != null) {
@@ -277,8 +266,8 @@ public class Linkedlist {
         display += "\b\b};";
         return display;
     }
-    static String Displayreverse (Linkedlist list){
-        Node currNode = list.head;
+    static String Displayreverse (){
+        Node currNode = head;
         String display = "}";
 
         while (currNode != null) {
