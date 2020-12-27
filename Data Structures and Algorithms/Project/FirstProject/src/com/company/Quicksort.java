@@ -1,71 +1,34 @@
 package com.company;
 
-public class Quicksort {
-    static boolean print = true;
-    static int pivot;
-    public static void main(String[] args) {
-        String temp = "SORTINGEXAMPLE";
+import java.util.Arrays;
 
-        int[] arr = ConvertIntemp(temp);
+public class Quicksort {
+    public static void main(String[] args) {
+            int temp[] = {8,5,6,21,85,8,1,88,39,55,180};
         int low = 0;
-        int high = arr.length-1;
+        int high = temp.length-1;
 
         System.out.println("---------- Quick Sort ----------");
-        System.out.println("Input: "+ temp);
-
-        sort(arr,low,high);
-
-
-        System.out.println("Sorted: "+ConvertInString(arr));
+//        System.out.println("Input: "+ Arrays.toString(temp));
+        sort(temp,low,high,"Main");
+//        System.out.println("Sorted: "+ Arrays.toString(temp));
     }
 
-    static int[] ConvertIntemp(String temp){
-        int[] arr = new int[temp.length()];
+    static void sort(int arr[], int low, int high,String name){
+        System.out.println(name);
 
-        for (int i = 0; i < temp.length(); i++) {
-               arr[i] = Integer.parseInt(String.valueOf((int) temp.charAt(i)));
-        }
-
-        return arr;
-    }
-    static String ConvertInString(int[] temp){
-        String arr = "";
-
-        for (int i = 0; i < temp.length; i++) {
-            arr += String.valueOf((char) temp[i]);
-        }
-
-        return arr;
-    }
-
-
-
-    static void sort(int arr[], int low, int high){
         if (low < high){
             int pi = partition(arr, low, high);
-            if(true){
-                if(arr.length/2 <= low){
-                    System.out.print("Recurse right: ");
-                }else {
-                    System.out.print("Recurse Left: ");
-                }
-                    System.out.print(ConvertInString(arr)+"\n");
+            System.out.println(Arrays.toString(arr)+","+low+","+high+","+arr[pi]+",");
 
-            }
-
-            sort(arr, low, pi-1);
-            sort(arr, pi+1, high);
+            sort(arr, low, pi-1,name+"<-left");
+            sort(arr, pi+1, high,name+" -> right");
         }
     }
 
     static int partition(int arr[], int low, int high){
-        pivot = arr[high];
+        int pivot = arr[high];
         int i = (low-1); // index of smaller element
-
-        if(print){
-            print = false;
-            System.out.println("Pivot: "+((char) pivot)+"  "+ConvertInString(arr));
-        }
 
         for (int j=low; j<high; j++)
             if (arr[j] < pivot)
