@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Background" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="Background" stylesheets="@Signup.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Signup">
+
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="0.0" prefWidth="600.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button fx:id="close" contentDisplay="RIGHT" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="20.0" prefWidth="20.0">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="6.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="24.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@close-window-icon-14-ff0000-512.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="full" contentDisplay="RIGHT" layoutX="30.0" layoutY="10.0" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#FullScreen" onKeyPressed="#full2" prefHeight="20.0" prefWidth="20.0">
+               <HBox.margin>
+                  <Insets left="17.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@maximize-window-icon-18-a1a1a1-512.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="minimize" contentDisplay="RIGHT" layoutX="50.0" layoutY="10.0" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#MinimizeWindow" prefHeight="20.0" prefWidth="20.0">
+               <HBox.margin>
+                  <Insets left="17.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="23.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@minimize-window-icon-18-a1a1a1-512.png" />
+                     </image>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="400.0" prefWidth="305.0" styleClass="ToAhmed" HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="298.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="TOP_CENTER" prefHeight="336.0" prefWidth="297.0">
+                     <children>
+                        <AnchorPane prefHeight="165.0" prefWidth="256.0">
+                           <children>
+                              <Label fx:id="Signup" alignment="CENTER" layoutX="53.0" layoutY="43.0" prefHeight="27.0" prefWidth="150.0" text="Signup" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Consolas Bold" size="36.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="36.0" layoutY="101.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="88.0" promptText="First Name" />
+                              <TextField layoutX="138.0" layoutY="101.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="88.0" promptText="Second Name" />
+                              <TextField layoutX="36.0" layoutY="143.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="194.0" promptText="Enter your email" />
+                              <PasswordField fx:id="WritePass" layoutX="34.0" layoutY="181.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#GetOnConfirm" prefHeight="25.0" prefWidth="164.0" promptText="Write a password" />
+                              <TextField fx:id="ShowWrite" accessibleRole="PASSWORD_FIELD" disable="true" editable="false" layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="25.0" prefWidth="150.0" promptText="Write a password" visible="false" />
+                              <Button fx:id="WriteButton" layoutX="206.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#WritePasss" onMouseReleased="#ExitWritepas" prefHeight="20.0" prefWidth="25.0">
+                                 <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@clipart2178237.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <PasswordField fx:id="ConfirmPass" layoutX="36.0" layoutY="217.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="164.0" promptText="Confirm your password" />
+                              <TextField fx:id="ShowConfirm" editable="false" layoutX="21.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Confirm your password" visible="false" />
+                              <Button layoutX="206.0" layoutY="184.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#ConfirmPasss" onMouseReleased="#ExitConfrimPass" prefHeight="20.0" prefWidth="25.0">
+                                 <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@clipart2178237.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="36.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="194.0">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Cr.jpeg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
