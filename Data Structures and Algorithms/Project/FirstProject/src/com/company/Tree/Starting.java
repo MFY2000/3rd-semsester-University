@@ -1,12 +1,10 @@
 package com.company.Tree;
 
-import com.company.Linkedlist.Linkedlist;
-
 public class Starting {
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
 
-        int arr[] = {1, 2, 3, 4, 5, 6, 6, 6, 6};
+        int arr[] = {1, 2, 3, 4, 5, 7,5,3,5,77,1,3,4,12,5,12};
         bt.root = bt.insertLevelOrder(arr, bt.root, 0);
 
         System.out.print("\nInorder: ");
