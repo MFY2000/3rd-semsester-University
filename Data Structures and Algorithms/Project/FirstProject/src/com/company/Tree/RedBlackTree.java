@@ -1,259 +1,348 @@
-//package com.company.Tree;
-//
-//import java.util.Scanner;
-//
-///* Class Node */
-//class Node {
-//    Node left, right;
-//    int element;
-//    int color;
-//
-//    public Node(int theElement) {
-//        element = theElement;
-//        left = right = null;
-//    }
-//    public Node(int theElement, Node lt, Node rt) {
-//        left = lt;
-//        right = rt;
-//        element = theElement;
-//        color = 1;
-//    }
-//}
-//
-//class RBTree {
-//    private Node current;
-//    private Node parent;
-//    private Node grand;
-//    private Node great;
-//    private Node header;
-//
-//    /* Black - 1  RED - 0 */
-//    static final int BLACK = 1;
-//    static final int RED   = 0;
-//
-//    public RBTree(int value) {
-//        header = new Node(value);
-//        header.left = null;
-//        header.right = null;
-//    }
-//
-//    /* Function to check if tree is empty */
-//    public boolean isEmpty() { return header == null; }
-//    /* Make the tree logically empty */
-//    public void makeEmpty() { header = null; }
-//    /* Function to insert item */
-//    public void insert(int item) {
-//        current = parent = grand = header;
-//        nullNode.element = item;
-//        while (current.element != item) {
-//            great = grand;
-//            grand = parent;
-//            parent = current;
-//            current = item < current.element ? current.left : current.right;
-//            if (current.left.color == RED && current.right.color == RED)
-//                handleReorient( item );
-//        }
-//        // Insertion fails if already present
-//        if (current != nullNode)
-//            return;
-//        current = new RedBlackNode(item, nullNode, nullNode);
-//        // Attach to parent
-//        if (item < parent.element)
-//            parent.left = current;
-//        else
-//            parent.right = current;
-//        handleReorient( item );
-//    }
-//    private void handleReorient(int item)
-//    {
-//        // Do the color flip
-//        current.color = RED;
-//        current.left.color = BLACK;
-//        current.right.color = BLACK;
-//
-//        if (parent.color == RED)
-//        {
-//            // Have to rotate
-//            grand.color = RED;
-//            if (item < grand.element != item < parent.element)
-//                parent = rotate( item, grand );  // Start dbl rotate
-//            current = rotate(item, great );
-//            current.color = BLACK;
-//        }
-//        // Make root black
-//        header.right.color = BLACK;
-//    }
-//    private RedBlackNode rotate(int item, RedBlackNode parent)
-//    {
-//        if(item < parent.element)
-//            return parent.left = item < parent.left.element ? rotateWithLeftChild(parent.left) : rotateWithRightChild(parent.left) ;
-//        else
-//            return parent.right = item < parent.right.element ? rotateWithLeftChild(parent.right) : rotateWithRightChild(parent.right);
-//    }
-//    /* Rotate binary tree node with left child */
-//    private RedBlackNode rotateWithLeftChild(RedBlackNode k2)
-//    {
-//        RedBlackNode k1 = k2.left;
-//        k2.left = k1.right;
-//        k1.right = k2;
-//        return k1;
-//    }
-//    /* Rotate binary tree node with right child */
-//    private RedBlackNode rotateWithRightChild(RedBlackNode k1)
-//    {
-//        RedBlackNode k2 = k1.right;
-//        k1.right = k2.left;
-//        k2.left = k1;
-//        return k2;
-//    }
-//    /* Functions to count number of nodes */
-//    public int countNodes()
-//    {
-//        return countNodes(header.right);
-//    }
-//    private int countNodes(RedBlackNode r)
-//    {
-//        if (r == nullNode)
-//            return 0;
-//        else
-//        {
-//            int l = 1;
-//            l += countNodes(r.left);
-//            l += countNodes(r.right);
-//            return l;
-//        }
-//    }
-//    /* Functions to search for an element */
-//    public boolean search(int val)
-//    {
-//        return search(header.right, val);
-//    }
-//    private boolean search(RedBlackNode r, int val)
-//    {
-//        boolean found = false;
-//        while ((r != nullNode) && !found)
-//        {
-//            int rval = r.element;
-//            if (val < rval)
-//                r = r.left;
-//            else if (val > rval)
-//                r = r.right;
-//            else
-//            {
-//                found = true;
-//                break;
-//            }
-//            found = search(r, val);
-//        }
-//        return found;
-//    }
-//    /* Function for inorder traversal */
-//    public void inorder()
-//    {
-//        inorder(header.right);
-//    }
-//    private void inorder(RedBlackNode r)
-//    {
-//        if (r != nullNode)
-//        {
-//            inorder(r.left);
-//            char c = 'B';
-//            if (r.color == 0)
-//                c = 'R';
-//            System.out.print(r.element +""+c+" ");
-//            inorder(r.right);
-//        }
-//    }
-//    /* Function for preorder traversal */
-//    public void preorder()
-//    {
-//        preorder(header.right);
-//    }
-//    private void preorder(RedBlackNode r)
-//    {
-//        if (r != nullNode)
-//        {
-//            char c = 'B';
-//            if (r.color == 0)
-//                c = 'R';
-//            System.out.print(r.element +""+c+" ");
-//            preorder(r.left);
-//            preorder(r.right);
-//        }
-//    }
-//    /* Function for postorder traversal */
-//    public void postorder()
-//    {
-//        postorder(header.right);
-//    }
-//    private void postorder(RedBlackNode r)
-//    {
-//        if (r != nullNode)
-//        {
-//            postorder(r.left);
-//            postorder(r.right);
-//            char c = 'B';
-//            if (r.color == 0)
-//                c = 'R';
-//            System.out.print(r.element +""+c+" ");
-//        }
-//    }
-//}
-//
-///* Class RedBlackTreeTest */
-//public class RedBlackTree{
-//    public static void main(String[] args)
-//    {
-//        Scanner scan = new Scanner(System.in);
-//        /* Creating object of RedBlack Tree */
-//        RBTree rbt = new RBTree(Integer.MIN_VALUE);
-//        System.out.println("Red Black Tree Test\n");
-//        char ch;
-//        /*  Perform tree operations  */
-//        do
-//        {
-//            System.out.println("\nRed Black Tree Operations\n");
-//            System.out.println("1. insert ");
-//            System.out.println("2. search");
-//            System.out.println("3. count nodes");
-//            System.out.println("4. check empty");
-//            System.out.println("5. clear tree");
-//
-//            int choice = scan.nextInt();
-//            switch (choice)
-//            {
-//                case 1 :
-//                    System.out.println("Enter integer element to insert");
-//                    rbt.insert( scan.nextInt() );
-//                    break;
-//                case 2 :
-//                    System.out.println("Enter integer element to search");
-//                    System.out.println("Search result : "+ rbt.search( scan.nextInt() ));
-//                    break;
-//                case 3 :
-//                    System.out.println("Nodes = "+ rbt.countNodes());
-//                    break;
-//                case 4 :
-//                    System.out.println("Empty status = "+ rbt.isEmpty());
-//                    break;
-//                case 5 :
-//                    System.out.println("\nTree Cleared");
-//                    rbt.makeEmpty();
-//                    break;
-//                default :
-//                    System.out.println("Wrong Entry \n ");
-//                    break;
-//            }
-//            /*  Display tree  */
-//            System.out.print("\nPost order : ");
-//            rbt.postorder();
-//            System.out.print("\nPre order : ");
-//            rbt.preorder();
-//            System.out.print("\nIn order : ");
-//            rbt.inorder();
-//
-//            System.out.println("\nDo you want to continue (Type y or n) \n");
-//            ch = scan.next().charAt(0);
-//        } while (ch == 'Y'|| ch == 'y');
-//    }
-//}
+package com.company.Tree;
+
+
+import java.util.Scanner;
+
+public class RedBlackTree {
+
+    private final int RED = 0;
+    private final int BLACK = 1;
+
+    private class Node {
+
+        int key = -1, color = BLACK;
+        Node left = nil, right = nil, parent = nil;
+
+        Node(int key) {
+            this.key = key;
+        }
+    }
+
+    private final Node nil = new Node(-1);
+    private Node root = nil;
+
+    public void printTree(Node node) {
+        if (node == nil) {
+            return;
+        }
+        printTree(node.left);
+        System.out.print(((node.color==RED)?"Color: Red ":"Color: Black ")+"Key: "+node.key+" Parent: "+node.parent.key+"\n");
+        printTree(node.right);
+    }
+
+    private Node findNode(Node findNode, Node node) {
+        if (root == nil) {
+            return null;
+        }
+
+        if (findNode.key < node.key) {
+            if (node.left != nil) {
+                return findNode(findNode, node.left);
+            }
+        } else if (findNode.key > node.key) {
+            if (node.right != nil) {
+                return findNode(findNode, node.right);
+            }
+        } else if (findNode.key == node.key) {
+            return node;
+        }
+        return null;
+    }
+
+    private void insert(Node node) {
+        Node temp = root;
+        if (root == nil) {
+            root = node;
+            node.color = BLACK;
+            node.parent = nil;
+        } else {
+            node.color = RED;
+            while (true) {
+                if (node.key < temp.key) {
+                    if (temp.left == nil) {
+                        temp.left = node;
+                        node.parent = temp;
+                        break;
+                    } else {
+                        temp = temp.left;
+                    }
+                } else if (node.key >= temp.key) {
+                    if (temp.right == nil) {
+                        temp.right = node;
+                        node.parent = temp;
+                        break;
+                    } else {
+                        temp = temp.right;
+                    }
+                }
+            }
+            fixTree(node);
+        }
+    }
+
+    //Takes as argument the newly inserted node
+    private void fixTree(Node node) {
+        while (node.parent.color == RED) {
+            Node uncle = nil;
+            if (node.parent == node.parent.parent.left) {
+                uncle = node.parent.parent.right;
+
+                if (uncle != nil && uncle.color == RED) {
+                    node.parent.color = BLACK;
+                    uncle.color = BLACK;
+                    node.parent.parent.color = RED;
+                    node = node.parent.parent;
+                    continue;
+                }
+                if (node == node.parent.right) {
+                    //Double rotation needed
+                    node = node.parent;
+                    rotateLeft(node);
+                }
+                node.parent.color = BLACK;
+                node.parent.parent.color = RED;
+                //if the "else if" code hasn't executed, this
+                //is a case where we only need a single rotation
+                rotateRight(node.parent.parent);
+            } else {
+                uncle = node.parent.parent.left;
+                if (uncle != nil && uncle.color == RED) {
+                    node.parent.color = BLACK;
+                    uncle.color = BLACK;
+                    node.parent.parent.color = RED;
+                    node = node.parent.parent;
+                    continue;
+                }
+                if (node == node.parent.left) {
+                    //Double rotation needed
+                    node = node.parent;
+                    rotateRight(node);
+                }
+                node.parent.color = BLACK;
+                node.parent.parent.color = RED;
+                rotateLeft(node.parent.parent);
+            }
+        }
+        root.color = BLACK;
+    }
+
+    void rotateLeft(Node node) {
+        if (node.parent != nil) {
+            if (node == node.parent.left) {
+                node.parent.left = node.right;
+            } else {
+                node.parent.right = node.right;
+            }
+            node.right.parent = node.parent;
+            node.parent = node.right;
+            if (node.right.left != nil) {
+                node.right.left.parent = node;
+            }
+            node.right = node.right.left;
+            node.parent.left = node;
+        } else {
+            Node right = root.right;
+            root.right = right.left;
+            right.left.parent = root;
+            root.parent = right;
+            right.left = root;
+            right.parent = nil;
+            root = right;
+        }
+    }
+
+    void rotateRight(Node node) {
+        if (node.parent != nil) {
+            if (node == node.parent.left) {
+                node.parent.left = node.left;
+            } else {
+                node.parent.right = node.left;
+            }
+
+            node.left.parent = node.parent;
+            node.parent = node.left;
+            if (node.left.right != nil) {
+                node.left.right.parent = node;
+            }
+            node.left = node.left.right;
+            node.parent.right = node;
+        } else {//Need to rotate root
+            Node left = root.left;
+            root.left = root.left.right;
+            left.right.parent = root;
+            root.parent = left;
+            left.right = root;
+            left.parent = nil;
+            root = left;
+        }
+    }
+
+    //Deletes whole tree
+    void deleteTree(){
+        root = nil;
+    }
+
+    //Deletion Code .
+
+    //This operation doesn't care about the new Node's connections
+    //with previous node's left and right. The caller has to take care
+    //of that.
+    void transplant(Node target, Node with){
+        if(target.parent == nil){
+            root = with;
+        }else if(target == target.parent.left){
+            target.parent.left = with;
+        }else
+            target.parent.right = with;
+        with.parent = target.parent;
+    }
+
+    boolean delete(Node z){
+        if((z = findNode(z, root))==null) return false;
+        Node x;
+        Node y = z;
+        int y_original_color = y.color;
+
+        if(z.left == nil){
+            x = z.right;
+            transplant(z, z.right);
+        }else if(z.right == nil){
+            x = z.left;
+            transplant(z, z.left);
+        }else{
+            y = treeMinimum(z.right);
+            y_original_color = y.color;
+            x = y.right;
+            if(y.parent == z)
+                x.parent = y;
+            else{
+                transplant(y, y.right);
+                y.right = z.right;
+                y.right.parent = y;
+            }
+            transplant(z, y);
+            y.left = z.left;
+            y.left.parent = y;
+            y.color = z.color;
+        }
+        if(y_original_color==BLACK)
+            deleteFixup(x);
+        return true;
+    }
+
+    void deleteFixup(Node x){
+        while(x!=root && x.color == BLACK){
+            if(x == x.parent.left){
+                Node w = x.parent.right;
+                if(w.color == RED){
+                    w.color = BLACK;
+                    x.parent.color = RED;
+                    rotateLeft(x.parent);
+                    w = x.parent.right;
+                }
+                if(w.left.color == BLACK && w.right.color == BLACK){
+                    w.color = RED;
+                    x = x.parent;
+                    continue;
+                }
+                else if(w.right.color == BLACK){
+                    w.left.color = BLACK;
+                    w.color = RED;
+                    rotateRight(w);
+                    w = x.parent.right;
+                }
+                if(w.right.color == RED){
+                    w.color = x.parent.color;
+                    x.parent.color = BLACK;
+                    w.right.color = BLACK;
+                    rotateLeft(x.parent);
+                    x = root;
+                }
+            }else{
+                Node w = x.parent.left;
+                if(w.color == RED){
+                    w.color = BLACK;
+                    x.parent.color = RED;
+                    rotateRight(x.parent);
+                    w = x.parent.left;
+                }
+                if(w.right.color == BLACK && w.left.color == BLACK){
+                    w.color = RED;
+                    x = x.parent;
+                    continue;
+                }
+                else if(w.left.color == BLACK){
+                    w.right.color = BLACK;
+                    w.color = RED;
+                    rotateLeft(w);
+                    w = x.parent.left;
+                }
+                if(w.left.color == RED){
+                    w.color = x.parent.color;
+                    x.parent.color = BLACK;
+                    w.left.color = BLACK;
+                    rotateRight(x.parent);
+                    x = root;
+                }
+            }
+        }
+        x.color = BLACK;
+    }
+
+    Node treeMinimum(Node subTreeRoot){
+        while(subTreeRoot.left!=nil){
+            subTreeRoot = subTreeRoot.left;
+        }
+        return subTreeRoot;
+    }
+
+    public void consoleUI() {
+        Scanner scan = new Scanner(System.in);
+        int item;
+        Node node;
+
+        while (true) {
+            System.out.println("\n1.- Add items\n"
+                    + "2.- Delete items\n"
+                    + "3.- Check items\n"
+                    + "4.- Print tree\n"
+                    + "5.- Delete tree\n");
+            int choice = scan.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter: ");
+                    item = scan.nextInt();
+                    node = new Node(item);
+                    insert(node);
+                    printTree(root);
+                    break;
+                case 2:
+                    System.out.print("Enter: ");
+                    item = scan.nextInt();
+                    System.out.print("\nDeleting item: " + item);
+                    System.out.println((delete(new Node(item))?": deleted!":": does not exist!"));
+                    printTree(root);
+                    break;
+                case 3:
+                    System.out.print("Enter: ");
+                    item = scan.nextInt();
+                    System.out.println("\nfind Node: " + item);
+                    System.out.println((findNode(new Node(item), root) != null) ? "found" : "not found");
+                    break;
+                case 4:
+                    printTree(root);
+                    break;
+                case 5:
+                    deleteTree();
+                    System.out.println("Tree deleted!");
+                    break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        RedBlackTree rbt = new RedBlackTree();
+        rbt.consoleUI();
+    }
+}

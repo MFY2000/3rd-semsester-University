@@ -221,7 +221,7 @@ public class AVL_Tree {
 
   class Test{
        public static void main(String[] args) {
-           Random rand=new Random();
+//           Random rand = new Random();
 
            AVL_Tree tree = new AVL_Tree();
            for (int i = 0; i < 12; i++)
@@ -235,6 +235,9 @@ public class AVL_Tree {
            tree.delete(5);
            tree.delete(9);
            tree.delete(2);
+
+           System.out.println("\nDeleting tree Node(5,9,2)....");
+           System.out.println("Deleted :)");
 
            System.out.print("\nPreorder: ");
            tree.Preorder(tree.root);
