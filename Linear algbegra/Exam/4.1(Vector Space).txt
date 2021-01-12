@@ -1,0 +1,10 @@
+1. If u and v are objects in V, then u + v is in V.
+2. u + v = v + u
+3. u + (v + w) = (u + v) + w
+4. 0 + u = u
+5. u + (-u) = (-u) + u = 0.
+6. ku is in V.
+7. k(u + v) = ku + kv
+8. (k + m)u = ku + mu
+9. k(mu) = (km)(u)
+10. 1u = u
