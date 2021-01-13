@@ -38,8 +38,6 @@ public class Selection {
         Swap(minIndex,i);
         }
     }
-
-
     public void Swap(int j,int i){
         int swap = getArray_index(j);
         setArray_index(j,getArray_index(i));
