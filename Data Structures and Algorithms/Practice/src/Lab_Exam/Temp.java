@@ -1,6 +1,9 @@
-package com.company.Tree;
+package Lab_Exam;
 
-public class Starting {
+public class Temp {
+}
+
+class Starting {
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
 
@@ -75,3 +78,4 @@ class BinaryTree{
         return root;
     }
 }
+

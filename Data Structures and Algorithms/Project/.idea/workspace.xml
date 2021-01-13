@@ -20,10 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0aaa336-0d92-4ecf-83b2-99db27fd8310" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Temp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/out/production/Practice/Lab_Exam/AVL_Tree/AVLTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/out/production/Practice/Lab_Exam/AVL_Tree/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/out/production/Practice/Lab_Exam/Linkedlist/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/out/production/Practice/Lab_Exam/Linkedlist/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/out/production/Practice/Lab_Exam/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/out/production/Practice/Lab_Exam/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Quick.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Quick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Tree/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Tree/Simple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Tree/Simple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstProject/src/com/company/Tree/Starting.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstProject/src/com/company/Tree/Starting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +81,7 @@
       <workItem from="1609784033599" duration="21000" />
       <workItem from="1610445389001" duration="5499000" />
       <workItem from="1610551197214" duration="717000" />
+      <workItem from="1610564143890" duration="1208000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,6 @@
 package Lab_Exam.Tree;
 
 public class Node {
-
     int Value;
    Node[] child;
 

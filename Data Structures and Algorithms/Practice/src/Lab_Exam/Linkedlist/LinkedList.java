@@ -17,7 +17,7 @@ public class LinkedList {
      boolean isEmpty() { return (head == null)?false:true; }
 
     // add the element in the linked list
-        void insert(int data) {
+    public void insert(int data) {
         Node new_node = new Node(data);
         new_node.next = null;
 
@@ -260,11 +260,16 @@ public class LinkedList {
         n1.Value = n2.Value;
         n2.Value = temp;
     }
-    void swap(Node n1,Node n2,boolean t){
-        Node temp = n1.next;
-        n1.next = n2.next;
-        n2.next = temp;
+
+    public void swap(){
+        swap(head.next,head.next.next,true);
     }
+    public void swap(Node n1,Node n2,boolean t){
+        Node temp = n1;
+        n1 = n2;
+        n2 = temp;
+    }
+
      void swapAdj(){
         int count = 0;
         Node current = head;
@@ -276,7 +281,7 @@ public class LinkedList {
 
 
     //Display methods
-     String Display(){
+    public String toString(){
         Node currNode = head;
         String display = "LinkedList: {";
 
