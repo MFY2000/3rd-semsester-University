@@ -29,7 +29,7 @@ public class Quick {
     }
     int partition(int low, int high){
         int pivot = getArray_index(high);
-        int i = (low);
+        int i = (low-1);
         for (int j=low; j<=high; j++)
             if (getArray_index(j) < pivot)
                 i += swap(i+1,j);

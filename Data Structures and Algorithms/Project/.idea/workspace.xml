@@ -20,38 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0aaa336-0d92-4ecf-83b2-99db27fd8310" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Practice/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/Practice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/AVL_Tree/AVLTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/AVL_Tree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Search/Binary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Search/Linear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Bubble.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Insertion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Merge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Quick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/AVL_Tree/AVLTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/AVL_Tree/AVLTreeOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/AVL_Tree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/Interface/IAVLTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/Interface/INode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/TestCases/deletions.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/TestCases/dictionary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/TestCases/queries.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/dictionary/Dictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/dictionaryIf/IDictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/AVLTreeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/DictionaryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/TestRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/TestUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/testing/AVLTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/testing/DictionaryTestCases.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/testing/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Quick.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Quick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +73,7 @@
       <updated>1609784029143</updated>
       <workItem from="1609784033599" duration="21000" />
       <workItem from="1610445389001" duration="5499000" />
+      <workItem from="1610551197214" duration="717000" />
     </task>
     <servers />
   </component>
@@ -118,6 +90,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1610475127899">
