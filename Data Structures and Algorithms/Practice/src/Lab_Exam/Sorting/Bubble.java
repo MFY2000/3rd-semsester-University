@@ -24,7 +24,7 @@ public class Bubble {
     public boolean isFlag() { return flag; }
 
     public void setArray_Search(int[] array_Search) { this.array_Search = array_Search; }
-    public void setArray_index(int index) {  }
+    public void setArray_index(int index,int value) { array_Search[index] = value; }
     public void setKey(int key) { this.key = key; }
     public void setLenght() { this.lenght = (getArray_Search()).length; }
     public void setFlag(boolean flag) { this.flag = flag; }
@@ -33,14 +33,14 @@ public class Bubble {
         for (int i = 0; i < getLenght()-1; i++)
             for (int j = 0; j < getLenght()-1; j++)
                 if (getArray_index(j) > getArray_index(j+1)) {
-                    swap = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = swap;
+                    Swap(j);
                 }
     }
 
-    public void Swap(){
-
+    public void Swap(int j){
+        int swap = getArray_index(j);
+        setArray_index(j,getArray_index(j+1));
+        setArray_index(j+1,swap);
     }
 
     public String toString(){
