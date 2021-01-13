@@ -1,20 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b0aaa336-0d92-4ecf-83b2-99db27fd8310" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Software Engineering (CS3110)/Project/Proposal.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Software Engineering (CS3110)/Project/template.pdf" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/Practice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/AVL_Tree/AVLTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/AVL_Tree/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Linkedlist/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Search/Binary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Search/Linear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Bubble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Insertion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Merge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice/src/Lab_Exam/Sorting/Quick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/AVL_Tree/AVLTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/AVL_Tree/AVLTreeOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/AVL_Tree/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/Interface/IAVLTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/Interface/INode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/TestCases/deletions.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/TestCases/dictionary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/TestCases/queries.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/dictionary/Dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/dictionaryIf/IDictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/AVLTreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/DictionaryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/TestRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/eg/edu/alexu/csd/filestructure/test/avl/TestUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/testing/AVLTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/testing/DictionaryTestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FirstProject/src/com/company/testing/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1mcDY45F1tPAXw0kCz3NH7cU3JQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,7 +83,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/FirstProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FirstProject/src/com/company" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MF\Desktop\3rd-semsester-University\Data Structures and Algorithms\Project\FirstProject\src\com\company" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -37,13 +101,32 @@
       <option name="presentableId" value="Default" />
       <updated>1609784029143</updated>
       <workItem from="1609784033599" duration="21000" />
+      <workItem from="1610445389001" duration="5499000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1609784053184">
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1610475127899">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1609784053184" />
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1610475127899" />
+    <state x="65" y="28" key="new project wizard" timestamp="1610475129596">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="65" y="28" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1610475129596" />
   </component>
 </project>
