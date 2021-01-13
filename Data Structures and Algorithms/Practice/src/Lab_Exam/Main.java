@@ -1,14 +1,20 @@
 package Lab_Exam;
 
+import Lab_Exam.Linkedlist.*;
 import Lab_Exam.Search.*;
 import Lab_Exam.Sorting.*;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = new int[]{7, 98, 6, 12, 84, 2, 68, 8,84,84,55};
+        Double_linkList dList = new Double_linkList();
+        //Add nodes to the list
+        dList.insert(1);
+        dList.insert(5);
+        dList.insert(2);
+        dList.insert(3);
+        dList.insert(4);
 
-        Quick Search = new Quick(array);
-        System.out.println(Search.toString());
-
+        //Displays the nodes present in the list
+        System.out.println(dList.toString());
     }
 }

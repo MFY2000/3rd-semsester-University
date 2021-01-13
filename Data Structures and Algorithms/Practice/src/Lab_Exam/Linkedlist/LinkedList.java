@@ -3,39 +3,39 @@ package Lab_Exam.Linkedlist;
 import java.util.HashSet;
 
 public class LinkedList {
-    private Node root;
+    private Node head;
 
      int getLenght() {
         int i = 0;
-        Node last = root;
+        Node last = head;
         while (last.next != null) {
             i++;
             last = last.next;
         }
         return i;
     }
-     boolean isEmpty() { return (root == null)?false:true; }
+     boolean isEmpty() { return (head == null)?false:true; }
 
     // add the element in the linked list
-     void insert(int data) {
+        void insert(int data) {
         Node new_node = new Node(data);
         new_node.next = null;
 
         if (!isEmpty())
-            root = new_node;
+            head = new_node;
         else {
-            Node last = root;
+            Node last = head;
             while (last.next != null)
                 last = last.next;
 
             last.next = new_node;
         }
-    }
-     void insert(int data, int key) {
+        }
+        void insert(int data, int key) {
         int size = getLenght();
         Node new_node = new Node(data);
         Node prev = null;
-        Node current = root;
+        Node current = head;
 
         if(key == 0)
             insertAtstart(data);
@@ -48,25 +48,29 @@ public class LinkedList {
             new_node.next = current;
             prev.next = new_node;
         }
-    }
-     void insertAtstart(int data) {
+        }
+        void insertAtstart(int data) {
         Node new_node = new Node(data);
 
         if (!(isEmpty()))
-            root = new_node;
+            head = new_node;
         else {
-            new_node.next = root;
-            root = new_node;
+            new_node.next = head;
+            head = new_node;
         }
-    }
+        }
+        void insertAll(int[] arr){
+            for (int i = 0; i < arr.length; i++)
+                insert(arr[i]);
+        }
 
     // delete the element in the linked list
      void deleteByValue(int key){
-        Node currNode = root,
+        Node currNode = head,
                 prev = null;
 
         if (currNode != null && currNode.Value == key) {
-            root = currNode.next;
+            head = currNode.next;
             System.out.println(key + " found and deleted");
             return;
         }
@@ -86,7 +90,7 @@ public class LinkedList {
     }
      void deleteBykey(int key){
         int size = getLenght();
-        Node currNode = root,
+        Node currNode = head,
                 prev = null;
 
         if (size < key) {
@@ -95,7 +99,7 @@ public class LinkedList {
         }
 
         if (key == 0){
-            root = currNode.next;
+            head = currNode.next;
             System.out.println((currNode.next).Value + " found and deleted");
             return;
         }
@@ -116,7 +120,7 @@ public class LinkedList {
      void deleteDuplicate(){
         HashSet<Integer> hs = new HashSet<>();
 
-        Node current = root;
+        Node current = head;
         Node prev = null;
         while (current != null) {
             if (hs.contains(current.Value)) prev.next = current.next;
@@ -130,7 +134,7 @@ public class LinkedList {
 
     // update the element in the linked list
      void update( int index, int value){
-        Node currNode = root;
+        Node currNode = head;
         if (getLenght() < index) {
             System.out.println("Index not Exist! ");
             return;
@@ -143,7 +147,7 @@ public class LinkedList {
     }
 
      int get(int index){
-        Node currNode = root;
+        Node currNode = head;
         int value;
         if (getLenght() < index) {
             System.out.println("Index not Exist! ");
@@ -160,7 +164,7 @@ public class LinkedList {
 
     // search the element in the linked list
      Boolean Search(int key) {
-        Node currNode = root;
+        Node currNode = head;
         Boolean condition = false;
 
         if (currNode == null)
@@ -176,7 +180,7 @@ public class LinkedList {
         return condition;
     }
      int Search(int index,boolean bool) {
-        Node currNode = root;
+        Node currNode = head;
         int returnValue;
 
         if (currNode == null || getLenght()>index)
@@ -191,7 +195,7 @@ public class LinkedList {
 
     //Sorting the Element in the
      void sortList() {
-        Node current = root, index = null;
+        Node current = head, index = null;
         int temp;
 
         if(current == null) {
@@ -218,12 +222,12 @@ public class LinkedList {
     LinkedList Merge(LinkedList list1,LinkedList list2){
         LinkedList list = new LinkedList();
         int l1 = getLenght(),l2 = getLenght();
-        Node current = list1.root;
+        Node current = list1.head;
 
         for (int i = 0; i <= (l1+l2)+1; i++) {
             list.insert(current.Value);
             if (l1 != i) current = current.next;
-            else current = list2.root;
+            else current = list2.head;
         }
         return list;
     }
@@ -231,7 +235,7 @@ public class LinkedList {
     //count the odd and even nodes
      int countOdd(){
         int count = 0;
-        Node current = root;
+        Node current = head;
         while (current.next != null){
             if (current.Value % 2 == 0)
                 count++;
@@ -241,7 +245,7 @@ public class LinkedList {
     }
      int countEven(){
         int count = 0;
-        Node current = root;
+        Node current = head;
         while (current.next != null){
             if (current.Value % 2 != 0)
                 count++;
@@ -263,7 +267,7 @@ public class LinkedList {
     }
      void swapAdj(){
         int count = 0;
-        Node current = root;
+        Node current = head;
         while (current.next != null) {
             swap(current,(current = current.next));
             current = current.next;
@@ -273,7 +277,7 @@ public class LinkedList {
 
     //Display methods
      String Display(){
-        Node currNode = root;
+        Node currNode = head;
         String display = "LinkedList: {";
 
         while (currNode != null) {
@@ -284,7 +288,7 @@ public class LinkedList {
         return display;
     }
      String Displayreverse (){
-        Node currNode = root;
+        Node currNode = head;
         String display = "}";
 
         while (currNode != null) {
