@@ -1,5 +1,7 @@
 package Lab_Exam.Search;
 
+import java.util.Arrays;
+
 public class Linear {
     private int[] array_Search;
     private int key;
@@ -20,6 +22,7 @@ public class Linear {
     }
 
     public int[] getArray_Search() { return array_Search; }
+    public String getArray(){return Arrays.toString(getArray_Search());}
     public int getArray_index(int index) { return array_Search[index]; }
     public int getKey() { return key; }
     public int getIndex() { return index; }
@@ -58,12 +61,12 @@ public class Linear {
 
     public String toString(){
         Search();
-        return getArray_Search()+" to Search: "+getKey()+(isFlag()?" ":"not ")+"Found: "+getIndex();
+        return getArray()+" to Search: "+getKey()+(isFlag()?" ":"not ")+"Found: "+getIndex();
     }
     public String toString(boolean val){
         Occurence();
         String temp;
-        temp = getArray_Search()+" to Search: "+getKey();
+        temp = getArray()+" to Search: "+getKey();
 
         if(isFlag()){
           temp += " Found from: "+getIndex()+" No of Times Found:"+getCount();
