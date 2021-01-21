@@ -1,0 +1,7 @@
+Database Management Systems		3
+Database Management Systems Lab		1
+Software Requirement Engineering	3
+Business Process Engineering		3
+Agile Software Project Management	3
+Software Construction and Development	3
+Game Programming			3
