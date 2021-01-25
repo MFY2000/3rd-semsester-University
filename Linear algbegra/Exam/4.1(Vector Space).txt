@@ -1,5 +1,8 @@
-1. If u and v are objects in V, then u + v is in V.
-2. u + v = v + u
+Chapter # 4
+========================EX # 4.1=======================
+
+1. u+v is in v
+2. u+v = v+u
 3. u + (v + w) = (u + v) + w
 4. 0 + u = u
 5. u + (-u) = (-u) + u = 0.
@@ -8,3 +11,17 @@
 8. (k + m)u = ku + mu
 9. k(mu) = (km)(u)
 10. 1u = u
+
+========================EX # 4.2=======================
+subspaces
+
+u,v is in w, u+v is in w
+Ku is in w.
+-------------------------------------------------------
+linear combinations
+
+K1u+K2v= w than find K1= ? K2= ? 
+{if equal to zero linear independent or opposite}
+
+
+
