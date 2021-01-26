@@ -31,3 +31,8 @@ k1v1 + k2v2 + k3v3 = 0
 if k1 = 0, k2 = 0, k3 = 0
 from which you can conclude that v1, v2, and v3 are linearly independent.
 
+			Chapter # 4
+======================== EX # 5.1 =======================
+characteristic equations
+
+XI - A (Where A is the matrix)
