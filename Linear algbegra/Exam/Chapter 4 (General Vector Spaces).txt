@@ -1,5 +1,5 @@
-Chapter # 4
-========================EX # 4.1=======================
+			Chapter # 4
+======================== EX # 4.1 =======================
 
 1. u+v is in v
 2. u+v = v+u
@@ -12,7 +12,7 @@ Chapter # 4
 9. k(mu) = (km)(u)
 10. 1u = u
 
-========================EX # 4.2=======================
+======================== EX # 4.2 =======================
 subspaces
 
 u,v is in w, u+v is in w
@@ -23,5 +23,11 @@ linear combinations
 K1u+K2v= w than find K1= ? K2= ? 
 {if equal to zero linear independent or opposite}
 
+======================== EX # 4.3 =======================
+Linear Independence
 
+k1v1 + k2v2 + k3v3 = 0
+
+if k1 = 0, k2 = 0, k3 = 0
+from which you can conclude that v1, v2, and v3 are linearly independent.
 
