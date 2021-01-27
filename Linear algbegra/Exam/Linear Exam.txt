@@ -30,9 +30,29 @@ k1v1 + k2v2 + k3v3 = 0
 
 if k1 = 0, k2 = 0, k3 = 0
 from which you can conclude that v1, v2, and v3 are linearly independent.
+__________________________________________________________________________________________
 
-			Chapter # 4
+			Chapter # 5
 ======================== EX # 5.1 =======================
-characteristic equations
+characteristic equations				 
 
-XI - A (Where A is the matrix)
+XI - A (Where A is the matrix)				 
+and only find the equation.			 
+
+---------------------------------------------------------
+Eigen values of the matrices
+
+
+find the root of X in the matrix
+1th from trials methods
+2 by solve the equation
+
+---------------------------------------------------------
+Eigen vecter of the matrices
+
+put the root's in the equation
+and find the nulity.
+
+
+======================== EX # 5.2 =======================
+
