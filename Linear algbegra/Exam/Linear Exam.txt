@@ -53,6 +53,20 @@ Eigen vecter of the matrices
 put the root's in the equation
 and find the nulity.
 
-
 ======================== EX # 5.2 =======================
+Diagonalizable
+
+same as 5.1 
+
+first Make the characteristic equations and then Eigen values of the matrices and
+at the last Eigen vecter/base of the matrices
+now a extra steps is to check the diagonalizable or not
+
+diagonalizable == n
+
+======================== EX # 5.3 =======================
+Complex Vector Spaces
+
+
+__________________________________________________________________________________________
 
