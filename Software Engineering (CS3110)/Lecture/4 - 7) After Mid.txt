@@ -1,0 +1,27 @@
+SE-Final paper topics
+? Software Quality Assurance
+? Complete chapter
+? Software Project Management
+? Complete chapter
+? Software Testing
+? Introduction to software Testing
+? Testing Myths
+? Testing Principles
+? Testing terminologies
+? Manual VS Automated Testing
+? Testing Types
+o Unite Testing
+o White Box
+o Black Box
+o Integration testing
+o Top down
+o Bottom up
+? System testing
+o What , Why and How
+? User Acceptance Testing
+o What , Why and How
+o Alpha testing
+o Beta testing
+o Regression testing
+? Change Management
+? Complete chapter
