@@ -1,8 +1,6 @@
 SE-Final paper topics
-? Software Quality Assurance
-? Complete chapter
-? Software Project Management
-? Complete chapter
+1) Software Quality Assurance {Complete chapter}
+2) Software Project Management { Complete chapter }
 ? Software Testing
 ? Introduction to software Testing
 ? Testing Myths
@@ -25,3 +23,8 @@ o Beta testing
 o Regression testing
 ? Change Management
 ? Complete chapter
+
+
+
+
+
