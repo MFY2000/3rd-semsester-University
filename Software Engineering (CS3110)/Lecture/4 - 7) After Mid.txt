@@ -1,19 +1,8 @@
 SE-Final paper topics
 1) Software Quality Assurance {Complete chapter}
 2) Software Project Management { Complete chapter }
-? Software Testing
-? Introduction to software Testing
-? Testing Myths
-? Testing Principles
-? Testing terminologies
-? Manual VS Automated Testing
-? Testing Types
-o Unite Testing
-o White Box
-o Black Box
-o Integration testing
-o Top down
-o Bottom up
+3) Software Testing { Complete chapter }
+4) Testing Types { Complete chapter }
 ? System testing
 o What , Why and How
 ? User Acceptance Testing
@@ -21,10 +10,4 @@ o What , Why and How
 o Alpha testing
 o Beta testing
 o Regression testing
-? Change Management
-? Complete chapter
-
-
-
-
-
+6) Change Management { Complete chapter }
