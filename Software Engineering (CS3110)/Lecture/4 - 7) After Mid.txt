@@ -1,13 +1,6 @@
 SE-Final paper topics
-1) Software Quality Assurance {Complete chapter}
+1) Software Quality Assurance {Complete chapter} done
 2) Software Project Management { Complete chapter }
-3) Software Testing { Complete chapter }
+3) Software Testing {Complete chapter} done
 4) Testing Types { Complete chapter }
-? System testing
-o What , Why and How
-? User Acceptance Testing
-o What , Why and How
-o Alpha testing
-o Beta testing
-o Regression testing
-6) Change Management { Complete chapter }
+6) Change Management {Complete chapter} done
